@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Excel Custom Functions</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script>
+        /**
+         * Doubles a number.
+         * @customfunction
+         * @param {number} x The input number
+         * @returns {number} The doubled value
+         */
+        function DOUBLENUMBER(x) {
+            return x * 2;
+        }
+
+        /**
+         * Adds two numbers.
+         * @customfunction
+         * @param {number} a First number
+         * @param {number} b Second number
+         * @returns {number} Sum of a and b
+         */
+        function ADDNUMBERS(a, b) {
+            return a + b;
+        }
+
+        if (typeof CustomFunctions !== "undefined" && typeof CustomFunctions.associate === "function") {
+            CustomFunctions.associate("DOUBLENUMBER", DOUBLENUMBER);
+            CustomFunctions.associate("ADDNUMBERS", ADDNUMBERS);
+        }
+    </script>
+</head>
+
+<body></body>
+
+</html>
